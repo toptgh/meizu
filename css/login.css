@@ -1,0 +1,186 @@
+﻿@charset "utf-8";
+
+.ysj{
+    display: block;
+    width: 35px;
+    height: 35px;
+    position:absolute;
+    right:10px;
+    top:10px;
+    cursor: pointer;
+    background: url(../images/login_qr.png);
+}
+
+.tit{
+    width: 100%;
+    padding-top: 35px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.tit a{
+    color: #7f7f7f;
+    font-size: 18px; 
+}
+.tit .titblue{
+    color: #32A5E7;
+}
+
+.register-line{
+    color: #B3ABAB;
+    display: inline-block;
+    border: 2px solid #B3ABAB;
+    border-left: 1px;
+    height: 10px;
+    line-height: 20px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+
+/*扫码登录*/
+.qrlogin{
+    width: 100%;
+    height: 443px;;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 3;
+    background-color: white;
+    padding-top: 42px;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+    cursor: pointer;
+}
+.qrlogin p{
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
+    margin-top:15px;
+    color: #333;
+}
+.qrlogin p:last-of-type{
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+/*用户名登录*/
+.loginByName{
+    width: 100%;
+    height: 233px;
+    /* padding-top: 70px; */
+    overflow: hidden;
+}
+
+.rember{
+    width:120px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top:23px;
+    margin-bottom:33px;
+    display: inline-block;
+    padding-left: 15px;
+}
+.rember input{
+    float: left;
+    width: 16px;
+    height: 16px;
+    /* border: none; */
+    border: 1px solid #dadada;
+}
+.rember span{
+    padding-left: 5px;
+    line-height: 15px;
+    float: left;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+#login2{
+    width: 320px;
+    height: 46px;
+    background-color: #32a5e7;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    margin: 103px 0 0 35px;
+}
+
+#login2:hover{
+    filter: brightness(1.2);
+}
+
+/*验证码登录*/
+.loginBySMS{
+    width: 100%;
+    height: 130px;
+    /* overflow: hidden; */
+    position: absolute;
+    left: 340px;
+    top: 166px;
+    z-index: 100;
+    /* background: sandybrown; */
+    display: none;
+    padding-top:1px;
+
+}
+/* #phonenum,#smstext{
+    display: block;
+    width: 278px;
+    height: 33px;
+    padding: 5px;
+    font-size:18px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 1px solid #7f7f7f;
+}
+#phonenum:focus,#smstext:focus{
+    border-color:#32A5E7 ;
+} */
+.loginBySMS a{
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    width: 102px;
+    font-size: 14px;
+    color: #7f7f7f;
+    position: absolute;
+    left: 216px;
+    top: 78px;
+    padding-left: 16px;
+    border-left:1px solid #dadada;
+}
+.loginBySMS p{
+    height: 24px;
+    width: 50px; 
+    font-size: 14px;
+    color: #7f7f7f;
+    position: absolute;
+    left: 50px;
+    top: 11px;
+    padding-left: 10px;
+    border-right:1px solid #dadada;
+    cursor: pointer;
+    line-height: 24px;
+    background: url(../images/jiao.gif) no-repeat;
+    background-position: 45px 12px;
+}
+.phoneCode{
+    width: 292px;
+    height: 240px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    background-color:white; 
+    left: 50px;
+    top: 50px;
+    z-index: 101;
+    font-size: 14px;
+    display: none;
+}
+
+#outer{
+    width: 288px;
+}
+

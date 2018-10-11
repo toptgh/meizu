@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* 注册登录通用样式 */
+/* 头部部分 */
+.logo-box {
+    min-width: 1240px;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.logo {
+    width: 1240px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.logo a {
+    display: block;
+    background: url(../../images/logo-blue.png) no-repeat center;
+    background-size: 110px;
+    height: 70px;
+    width: 125px;
+}
+
+/* body部分 */
+.wrap {
+    width: 100%;
+    min-width: 1240px;
+    height: 750px;
+    position: relative;
+    background: url(../../images/login_banner.jpg);
+}
+
+.wrap-content {
+    width: 1240px;
+    height: 750px;
+    margin: 0 auto;
+}
+/* 提示消息栏 */
+#login_msg{
+    width: 290px;
+    height: 20px;
+    position: absolute;
+    background-color: #90EE90;
+    border-radius: 8px;
+    left: 49px;
+    top: 130px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: whitesmoke;
+    display: none;
+}
+/* 表单样式 */
+.loginBox{
+    background-color: white;
+    width:320px;
+    height:443px;
+    position:absolute;
+    right:223px;
+    top:105px;
+    padding: 35px 35px 10px;
+    border-radius: 2px;
+}
+/* 输入框 */
+.inputs {
+    display: block;
+    width: 272px;
+    height: 27px;
+    padding: 8px;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+#phonenum {
+    width: 215px;
+    padding-left: 65px;
+}
+
+.inputs:focus {
+    border-color: #32A5E7;
+}
+
+/* 登录按钮 */
+#login{
+    width: 100%;
+    height: 46px;
+    background-color: #32a5e7;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+}
+
+#login:hover {
+    filter: brightness(1.2);
+}
+
+.login_link {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.login_link a:first-child {
+    float: left;
+}
+
+.login_link a:last-child {
+    float: right;
+}
+
+.login_link a {
+    color: #32a5e7;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+}
+
+.phoneCode div{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background-color:#f2f2f2; 
+}
+.phoneCode li{
+    width: 100%;
+    height: 24px;
+    cursor: pointer;
+    line-height: 24px;
+}
+.country{
+    float: left;
+}
+.phone-code{
+    float: right;
+}
+
+
+/*foot*/
+.foot-box {
+    width: 100%;
+    min-width: 1240px;
+    height: 130px;
+}
+
+.foot {
+    width: 1240px;
+    height: 130px;
+    padding: 40px 120px 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.links {
+    float: left;
+    position: relative;
+
+}
+
+.links a {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    color: #000;
+}
+
+.links a:last-of-type {
+    background: url(../../images/jiao.gif) no-repeat;
+    background-position: 64px 12px;
+}
+
+.links a:hover {
+    color: #32a5e7;
+}
+
+.links span {
+    font-size: 10px;
+    line-height: 10px;
+    margin: 0 9px;
+    background-color: #888;
+    display: inline-block;
+    height: 10px;
+    width: 1px;
+}
+
+.lang {
+    width: 79px;
+    height: 82px;
+    position: absolute;
+    left: 388px;
+    top: -79px;
+    overflow: hidden;
+    border: 1px solid #e1e4e8;
+    cursor: pointer;
+    background-color: white;
+}
+
+.lang li {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    color: #000;
+    text-align: center;
+}
+
+.lang li:first-of-type {
+    color: #32a5e7;
+}
+
+.lang li:last-of-type {
+    border-top: 1px solid #e1e4e8;
+}
+
+.contact {
+    float: left;
+    margin-left: 38px;
+}
+
+.contact a,
+.contact span {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.contact a {
+    display: inline-block;
+    height: 20px;
+    width: 64px;
+    color: white;
+    background-color: #32a5e7;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 25px;
+    border-radius: 2px;
+}
+
+.contact a:hover {
+    filter: brightness(1.2);
+}
+
+.wx {
+    margin-left: 124px;
+    float: left;
+    margin-top: -1px;
+}
+
+.wx a {
+    color: #999;
+}
+
+.icon-weibo,
+.icon-wechat,
+.icon-062qqkongjian {
+    font-size: 24px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #c8c8c8;
+    margin-right: 8px;
+    color: #999;
+}
+
+.icon-062qqkongjian {
+    margin-right: 0px;
+
+}
+
+.icon-wechat {
+    color: #a8a8a8;
+}
+
+.icon-weibo:hover {
+    color: salmon;
+    border-color: salmon;
+}
+
+.icon-wechat:hover {
+    color: #90EE90;
+    border-color: #90EE90;
+}
+
+.icon-062qqkongjian:hover {
+    color: #ffc100;
+    border-color: #ffc100;
+}
+
+.copyright-text {
+    margin-top: 20px;
+    float: left;
+    font-size: 12px;
+    line-height: 12px;
+    color: #7f7f7f;
+}
+
+.copyright-text a {
+    color: #7f7f7f;
+}

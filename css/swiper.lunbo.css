@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* 轮播图css */
+
+.header-bbox {
+  position: relative;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  min-width: 1240px;
+}
+
+.swiper-wrapper a {
+  display: block;
+  width: 1240px;
+  height: 670px;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 99.7%;
+}
+
+.bg1 {
+  background: url(../images/banner1.jpg);
+  /* 图片居中 */
+  background-position: center;
+}
+
+.bg2 {
+  background: url(../images/banner2.jpg);
+  background-position: center;
+}
+
+.bg3 {
+  background: url(../images/banner3.jpg);
+  background-position: center;
+}
+
+.bg4 {
+  background: url(../images/banner4.jpg);
+  background-position: center;
+}
+
+.bg5 {
+  background: url(../images/banner5.jpg);
+  background-position: center;
+}
+
+.bg6 {
+  background: url(../images/banner6.jpg);
+  background-position: center;
+}
+
+.bg7 {
+  background: url(../images/banner7.jpg);
+  background-position: center;
+}
+
+.bg8 {
+  background: url(../images/banner8.jpg);
+  background-position: center;
+}
+
+/*包裹分页器的div的位置等CSS样式*/
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+}
+
+/* 小圆点的间距 */
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 8px;
+}
+
+/* 小圆点样式 */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #fff;
+  opacity:0.9;
+}
+
+/* 被选中小圆点样式 */
+.swiper-pagination-bullet-active{
+  width: 9px;
+  height: 9px;
+  background:rgba(0,0,0,0.1);
+  border: 1px solid #fff;
+}
