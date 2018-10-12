@@ -15,6 +15,7 @@ var login = (function () {
         },
         event: function () {
             var _this = this;
+
             // 账号登录
             this.$loginBtn.onclick = function () {
                     // 发送ajax，验证用户名和密码
@@ -73,12 +74,24 @@ var login = (function () {
                 // 每次发送请求时,都携带这个token值,后台才能确定当前用户登录成功,才会返回数据
                 document.cookie = "token=" + data.data.token;
                 document.cookie = "user-id=" + data.data.id;
+                var search = location.search; //获取当前网址问号后面的内容
                 //记录登录状态 保存到cookie
                 if ($(".rember input").is(':checked')) {
                     document.cookie = "username=" + data.data.username;
-                    location.href = 'http://localhost:1012/meizu/index.html';
+                    if (search == '') {
+                        location.href = 'http://localhost:1012/meizu/index.html';
+                    } else {
+                        url = search.split("=")[1];
+                        location.href = url;//跳转为问号后面的网址
+                    }
                 } else {
-                    location.href = 'http://localhost:1012/meizu/index.html';
+
+                    if (search == '') {
+                        location.href = 'http://localhost:1012/meizu/index.html';
+                    } else {
+                        url = search.split("=")[1];
+                        location.href = url;
+                    }
                     document.cookie = "username=" + data.data.username;
                 }
             } else {

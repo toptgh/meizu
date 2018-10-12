@@ -1,0 +1,459 @@
+@charset "UTF-8";
+
+body {
+    position: relative;
+    background: #efefef;
+}
+
+/* 
+头部 */
+.headerbox {
+    width: 100%;
+    min-width: 1240px;
+    height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 10px;
+}
+
+.header {
+    width: 1240px;
+    height: 80px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 125px;
+    height: 23px;
+    margin: 28px 55px 0px 0px;
+}
+
+.logo {
+    float: left;
+
+}
+
+.guid {
+    float: left;
+    font-size: 14px;
+    height: 80px;
+    line-height: 80px;
+    color: #999;
+}
+
+.guid span {
+    padding: 0 10px;
+}
+
+.guid span:first-of-type {
+    color: #333;
+}
+
+.menu {
+    float: right;
+}
+
+.menu a {
+    font-size: 12px;
+    line-height: 80px;
+    display: inline-block;
+    height: 80px;
+    padding-right: 20px;
+    color: #666;
+}
+
+.menu a:nth-of-type(2) {
+    margin: 0 20px;
+}
+
+.menu a:hover {
+    transition: all 1s;
+    color: #00c3f5;
+}
+
+/* 中间部分 */
+.wrapbox{
+    width:100%;
+    min-width: 1240px;
+    margin-bottom: 40px;
+}
+.wrap {
+    width: 1240px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    margin: 0 auto;
+}
+
+.cart_tit {
+    width: 1240px;
+    height: 49px;
+    border-bottom: 1px solid #efefef;
+    background: white;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+.cart_tit p {
+    float: left;
+    font-size: 12px;
+    line-height: 49px;
+    color: rgba(51,51,51,.4);
+}
+
+.checkboxs {
+    float: left;
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkboxs:checked{
+    border-color: #00c3f5;
+   background:#00c3f5;
+}
+
+.cart_tit p:first-of-type {
+    width: 567px;
+    color: #333;
+    font-size: 14px;
+}
+
+.cart_tit p:nth-of-type(2) {
+    width: 210px;
+}
+
+.cart_tit p:nth-of-type(3) {
+    width: 162px;
+}
+
+.cart_tit p:nth-of-type(4) {
+    width: 178px;
+}
+
+.cart_tit .editCart {
+    cursor: pointer;
+    color: #00c3f5;
+}
+
+.first_line {
+    height: 50px;
+    border-bottom: 1px solid #efefef;
+    padding-left: 23px;
+    box-sizing: border-box;
+    background: #f7f5f5;
+    color: #8c8c8c;
+}
+
+.first_line p {
+    float: left;
+    font-size: 12px;
+    line-height: 49px;
+    color: #8c8c8c;
+}
+
+.first_line p:first-of-type {
+    width: 56px;
+    color: #666;
+}
+
+/*购物车无商品或未登陆时*/
+.nogood {
+    height: 300px;
+    background: white;
+    margin-bottom: 10px;
+    border: 1px solid #efefef;
+    position: relative;
+}
+
+.nogood_con {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nogood_con a {
+    display: block;
+    width: 56px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 36px;
+    color: white;
+    background-color: #32a5e7;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all .6s;
+}
+
+.nogood_con a:hover {
+    filter: brightness(1.2);
+}
+
+.nogood_left {
+    width: 102px;
+    height: 133px;
+    background-image: url(../images/cry.png);
+    background-size: cover;
+    float: left;
+    margin-right: 30px;
+}
+
+.nogood_right {
+    float: left;
+    color: #666;
+}
+
+.nogood_right h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.nogood_right p {
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+/*购物车商品*/
+.goods {
+    background: white;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.buyBytheway {
+    overflow: hidden;
+    padding-top: 18px;
+    padding-left: 24px;
+}
+
+.jiajiagou {
+    width: 60px;
+    height: 18px;
+    border: 1px solid #e02b41;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+    color: #e02b41;
+    border-radius: 1px;
+    float: left;
+    margin-right: 10px;
+}
+
+.jiajiagou~p {
+    float: left;
+    color: #595959;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+}
+
+.buyBytheway a {
+    float: left;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+    display: block;
+    color: #00c3f5;
+    padding-left: 10px;
+}
+
+.goods {
+    padding-left: 23px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.good_info {
+    overflow: hidden;
+    padding: 35px 0;
+    height: 90px;
+    border-bottom: 1px solid #efefef;
+    position: relative;
+}
+
+.good_info .checkboxs {
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.good_info img {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+}
+
+.good_intro {
+    padding-top: 17px;
+    font-size: 14px;
+    height: 47px;
+    float: left;
+    width: 420px;
+}
+
+.good_intro h4 {
+    line-height: 24px;
+    height: 24px;
+}
+
+.good_intro p {
+    line-height: 24px;
+    height: 24px;
+    color: #8c8c8c;
+}
+
+.good_price {
+    float: left;
+    font-size: 14px;
+    padding-top: 40px;
+    line-height: 14px;
+    height: 14px;
+    color: #666;
+    margin-right: 105px;
+    width: 88px;
+}
+
+.good_num {
+    float: left;
+    height: 100%;
+    padding-top: 32px;
+    margin-right: 105px;
+}
+
+.btn {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    display: block;
+    border: 1px solid #efefef;
+    background: white;
+    float: left;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.good_num .num {
+    border: none;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    float: left;
+    width: 15px;
+    height: 22px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.good_sum {
+    float: left;
+    padding-top: 35px;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+/*购物车的合计行*/
+.cart_footer {
+    width: 1240px;
+    height: 70px;
+    background: white;
+    padding-left: 23px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+
+}
+#last-checkbox{
+    margin-top: 28px;
+}
+.cart_footer .checkboxs {
+    margin-top: 30px;
+    margin-right: 9px;
+}
+
+.cart_footer span {
+    height: 70px;
+    line-height: 70px;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.qx {
+    color: #333;
+}
+
+#removeselect {
+    margin: 0 24px 0 12px;
+    cursor: pointer;
+}
+
+.heji span,
+.xz span {
+    padding: 0 5px;
+}
+
+#selectcount {
+    color: #00c3f5;
+}
+
+.xz {
+    margin-right: 449px;
+}
+
+.hjjr {
+    color: #595959;
+    font-size: 16px;
+    margin-right: 28px;
+}
+
+.hjjr span {
+    font-size: 20px;
+    color: #e02b41;
+    font-weight: 600;
+}
+
+.checkout {
+    background-color: #DBDBDB;
+    width: 98px;
+    height: 34px;
+    border: none;
+    border-radius: 1px;
+    display: inline-block;
+    color: white;
+    font-size: 14px;
+    padding: 0 20px;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.add {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #bdbdbd;
+    position: absolute;
+    transform: rotateZ(45deg);
+    right: 44px;
+    top: 65px;
+    cursor: pointer;
+}
+
+.add:hover {
+    border-color: #00c3f5;
+}
+
+.add:hover i {
+    background-color: #00c3f5;
+}

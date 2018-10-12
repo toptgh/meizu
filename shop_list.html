@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/common/reset.css">
     <link rel="stylesheet" href="css/common/common.css">
     <link rel="stylesheet" href="css/shop_list.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         <div id="headerbox">
             <div class="header">
                 <a class="header-logo" href="index.html"></a>
-                <a class="header-car" href="" target="_blank">
+                <a class="header-car" href="shop_car.html">
                     <em>0</em>
                 </a>
                 <div class="header-user-box">
@@ -106,7 +107,7 @@
         <!-- 标题 -->
         <div class="head-box">
             <div class="head">
-                <h4>魅族 16th</h4>
+                <h4 class="phone_name">魅族 16th</h4>
                 <div class="head_right">
                     <a href="javascript:void(0)">首页</a><span></span>
                     <a href="javascript:void(0)">概述</a><span></span>
@@ -122,13 +123,13 @@
             <div class="product_choice">
                 <div class="preview">
                     <ul class="imgBox">
-                        <li class="imgbox_show"><img src="images/16th.jpg" /></li>
+                        <li class="imgbox_show"><img src="images/hei.jpg" /></li>
                     </ul>
                     <ul class="imgxiao-box">
-                        <li class="imgxiao click1"><img src="images/16th-xiao.jpg" /></li>
-                        <li class="imgxiao click2"><img src="images/16th-xiao2.jpg" /></li>
-                        <li class="imgxiao click3"><img src="images/16th-xiao3.jpg" /></li>
-                        <li class="imgxiao click4"><img src="images/16th-xiao4.jpg" /></li>
+                        <li class="imgxiao click1"><img src="images/hei.jpg" /></li>
+                        <li class="imgxiao click2"><img src="images/hei2.jpg" /></li>
+                        <li class="imgxiao click3"><img src="images/hei3.jpg" /></li>
+                        <li class="imgxiao click4"><img src="images/hei4.jpg" /></li>
                     </ul>
                     <div class="preview-action">
                         <a href="javascript:void(0)">
@@ -142,9 +143,9 @@
                     </div>
                 </div>
                 <div class="choice">
-                    <h3>魅族 16th</h3>
+                    <h3 class="phone_name">魅族 16th</h3>
                     <p>骁龙845 屏幕下指纹</p>
-                    <p class="price"><span>￥</span><span id="price2">3427.00</span></p>
+                    <p class="price"><span>￥</span><span id="price">2798.00</span></p>
                     <div class="servers_con">支&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp持<em>√</em><span>顺丰发货</span><em>√</em><span>7天无理由退货</span></div>
                     <div class="deliver_con">
                         <p class="deliver_left">配送服务</p>
@@ -162,32 +163,32 @@
                     </div>
                     <div class="dotline"></div>
 
-                    <div class="xinghao series">
+                    <div class="xinghao series" >
                         <p>型&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp号</p>
                         <div class="choice_btn">
-                            <button data-addfei="0" data-id="1">魅族 16th</button>
-                            <button data-addfei="500" data-id="2">魅族 16th Plus</button>
+                            <button class="btnname buttonclicked"  data-addfei="0" data-id="1">魅族 16th</button>
+                            <button data-addfei="400" data-id="2" class="btnname">魅族 16th Plus</button>
                         </div>
                     </div>
 
                     <div class="wangluo series">
                         <p>网络类型</p>
                         <div class="choice_btn">
-                            <button data-addfei="0" data-id="1">全网通公开版</button>
+                            <button class="buttonclicked"  data-addfei="0" data-id="1">全网通公开版</button>
                         </div>
                     </div>
                     <div class="yanse series">
                         <p>颜色分类</p>
                         <div class="choice_btn">
-                            <button data-addfei="0" data-id="1"><img src="images/jyh.png" alt=""><span> 静夜黑</span></button>
+                            <button class="buttonclicked"  data-addfei="0" data-id="1"><img src="images/jyh.png" alt=""><span> 静夜黑</span></button>
                             <button data-addfei="0" data-id="2"><img src="images/ysb.png" alt=""><span> 远山白</span></button>
-                            <button data-addfei="0" data-id="2"><img src="images/jgl.png" alt=""><span> 极光蓝</span></button>
+                            <button data-addfei="0" data-id="3"><img src="images/jgl.png" alt=""><span> 极光蓝</span></button>
                         </div>
                     </div>
                     <div class="neicun series">
                         <p>内&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp存</p>
                         <div class="choice_btn">
-                            <button data-addfei="0" data-id="1">6+64GB</button>
+                            <button class="buttonclicked"  data-addfei="0" data-id="1">6+64GB</button>
                             <button data-addfei="300" data-id="2">6+128GB</button>
                             <button data-addfei="800" data-id="3">8+128GB</button>
                         </div>
@@ -195,7 +196,7 @@
                     <div class="taocan series">
                         <p>选择套餐</p>
                         <div class="choice_btn">
-                            <button data-addfei="0" data-id="1">官方标配</button>
+                            <button class="buttonclicked"  data-addfei="0" data-id="1">官方标配</button>
                             <button data-addfei="100" data-id="2">碎屏保套餐</button>
                         </div>
 
@@ -217,15 +218,35 @@
         </div>
         <!-- 详情 -->
         <div class="product_detail_box">
-        <div class="product_detail">
-            <h3 class="product_tit">服务说明</h3>
-            <img class="detail_img" src="images/xq.jpg" />
-            <a class="cuipingbao" href="javascript:void(0)">
-                <img src="images/bz.jpg" />
-            </a>
-            <h3 class="product_tit">为您推荐</h3>
+            <div class="product_detail">
+                <h3 class="product_tit">服务说明</h3>
+                <img class="detail_img" src="images/xq.jpg" />
+                <a class="cuipingbao" href="javascript:void(0)">
+                    <img src="images/bz.jpg" />
+                </a>
+                <h3 class="product_tit">为您推荐</h3>
+            </div>
         </div>
-    </div>
+        <!-- Swiper 轮播 -->
+        <div class="swiperbox">
+            <div class="swiper-container">
+                <div class="swiper-wrapper wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="images/16th.jpg" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/erji2.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/xlx.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/cdb.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/erji3.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/cdb.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/erji2.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/16th.jpg" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/xlx.png" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="images/16th.jpg" alt=""><h4>魅族16th</h4><p>骁龙845 屏幕下指纹</p><em>￥3427</em></a></div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+         <div class="swiper-button-next" id="next"></div>
+         <div class="swiper-button-prev" id="prev"></div>
+        </div>
         <!--  底部 -->
         <div class="foot">
             <div class="foot_top">
@@ -292,7 +313,7 @@
         <div class="slideBar">
             <ul>
                 <li class="slide_first">
-                    <a href="javascript:void(0)">
+                    <a href="shop_car.html">
                         <i class="iconfont icon-xiazai1"></i>
                         <b class="goodnum">0</b>
                         <span>购物车</span>
@@ -311,6 +332,8 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/common.js"></script>
         <script src="js/shop_list.js"></script>
+        <script src="js/swiper.min.js"></script>
+
         <script>
             shop_list.init();
         </script>

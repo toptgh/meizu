@@ -109,7 +109,7 @@ var index = (function () {
             });
             $('.header-logo').css('background', 'url(images/logo-blue.png) no-repeat center'); // 换logo背景图
             $('.header-car').css('background', 'url(images/shop_car_icon.png) no-repeat bottom right'); // 换购物车背景图
-            $('.nav-box').slideDown(200);
+            $('.nav-box').stop().slideDown(400);
         },
 
         nav_mouseleave: function () {
