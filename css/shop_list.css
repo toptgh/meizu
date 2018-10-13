@@ -13,7 +13,7 @@
 
 .user-list:after {
     border-bottom-color: #eeeeee;
-  
+
 }
 
 .user-list li {
@@ -348,19 +348,21 @@
     color: #595959;
     cursor: pointer;
 }
-
-.choice_btn img {
-    float: left;
-    width: 30px;
-    height: 30px;
-    margin-top: 5px;
-    margin-left: 50px;
+.bg{
+    padding-left: 43px;
 }
 
-.choice_btn span {
-    float: left;
-    display: inline-block;
-
+.black_img{
+    background: url(../images/jyh.png) no-repeat 48px 2px;
+    background-size: 35px;
+}
+.white_img{
+    background: url(../images/ysb.png) no-repeat 48px 2px;
+    background-size: 35px;
+}
+.blue_img{
+    background: url(../images/jgl.png) no-repeat 48px 2px;
+    background-size: 35px;
 }
 
 
@@ -405,6 +407,12 @@
     border-right: 1px solid #dedede;
 }
 
+.boughtNum_right button:disabled {
+    cursor: default;
+    color: #e0e0e0;
+}
+
+
 .boughtNum_right button {
     background-color: #f7f7f7;
     width: 29px;
@@ -429,6 +437,7 @@
     cursor: pointer;
     transition: all 0.5s;
 }
+
 
 .buybtn input:last-child {
     border: 1px solid #27b3ff;
@@ -493,7 +502,7 @@
 
 /* 
 轮播图 */
-.swiperbox{
+.swiperbox {
     width: 100%;
     min-width: 1240px;
     height: 340px;
@@ -501,6 +510,7 @@
     padding-bottom: 60px;
     position: relative;
 }
+
 .swiper-container {
     width: 1240px;
     height: 315px;
@@ -528,25 +538,28 @@
     align-items: center;
 }
 
-#next{
+#next {
     width: 25px;
     height: 25px;
     top: -25px;
     right: 60px;
 }
-#prev{
+
+#prev {
     width: 25px;
     height: 25px;
     top: -25px;
     left: 1220px;
 }
-.swiper-slide a{
+
+.swiper-slide a {
     position: relative;
     display: block;
     width: 240px;
     height: 315px;
 }
-.swiper-slide a img{
+
+.swiper-slide a img {
     position: absolute;
     display: block;
     width: 165px;
@@ -555,18 +568,22 @@
     top: 20px;
     transition: all .3s ease;
 }
-.swiper-slide a img:hover{
+
+.swiper-slide a img:hover {
     transform: scale(1.2);
 }
-.swiper-slide a h4{
+
+.swiper-slide a h4 {
     font-size: 16px;
     margin-top: 220px;
 }
-.swiper-slide a p{
+
+.swiper-slide a p {
     font-size: 12px;
     color: #bfbfbf;
 }
-.swiper-slide a em{
+
+.swiper-slide a em {
     display: block;
     font-size: 18px;
     color: #e02b41;

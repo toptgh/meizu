@@ -33,10 +33,10 @@ var index = (function () {
 
 
                 // 用户列表变色
-                hover_color('.user','','color', '#00b9f2', '#000');
+                hover_color('.user', '', 'color', '#00b9f2', '#000');
 
-                
-                
+
+
                 // // //回到顶部效果
                 back_top('.slide_last');
 
@@ -61,6 +61,8 @@ var index = (function () {
                         delCookie("username");
                         location.reload();
                     });
+                    //发送ajax请求获取购物车的商品数量 显示在小红点上面
+                    getCartNum( getCookie('username'));
                 };
                 if (getCookie('username') == null) {
                     $('.header-user').css('background', 'url(images/icon-user-white.png) no-repeat');

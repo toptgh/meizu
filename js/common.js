@@ -68,11 +68,11 @@
   }
 
   //鼠标滑过变色
-  var hover_color = window.hover_color = function (ele,ele2,attr, color, color2) {
+  var hover_color = window.hover_color = function (ele, ele2, attr, color, color2) {
     $(ele).hover(function () {
-      $(this||ele2).css(attr, color);
+      $(this || ele2).css(attr, color);
     }, function () {
-      $(this||ele2).css(attr, color2);
+      $(this || ele2).css(attr, color2);
     })
   }
 
@@ -92,6 +92,24 @@
     }, function () {
       $(ele2).stop().slideUp();
     });
+  }
+
+  //读取网址 给网址后面加一个search 用于页面点击登录后跳转到登录页面，登陆成功跳回到本页面
+  var url = window.url = function (ele) {
+    var href = $(ele).attr('href'); //获取点击后跳转的网址
+    var url = window.location.href; // 获取当前的网址
+    $(ele).attr('href', href + '?redirect=' + url); //拼接
+  }
+
+  //发送ajax请求获取购物车的商品数量 显示在小红点上面 ele是用户名
+  var getCartNum = window.getCartNum = function (ele) {
+    $.post("http://localhost:1012/meizu/admin/php/GetCartCount.php",
+      "username=" + ele,
+      function (data, textStatus, jqXHR) {
+        $(".goodnum").html(parseInt(data)||0);
+      },
+      "text"
+    )
   }
 
 })

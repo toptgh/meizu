@@ -5,12 +5,11 @@ var shop_car = (function () {
         },
         event: function () {
             var _this = this;
-            //读取网址 给网址后面加一个search
-            $(document).ready(function () {
-                var href = $('.login_car').attr('href');
-                var url = window.location.href;
-                $('.login_car').attr('href', href + '?redirect=' + url);
-            });
+            //调用公共JS的函数
+           !$(function(){
+               //读取网址 给网址后面加一个search
+               url('.login_car');
+           })
         },
     }
 }())
