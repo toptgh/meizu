@@ -8,72 +8,72 @@ var index = (function () {
         },
         event: function () {
             var _this = this;
-            //这里调用的函数都是common.js里面的函数 通过!$(function(){})实现
-            !$(function () {
-                //点击导航栏a滑动到相应位置 
-                $('.sj').click(function (e) {
+            //点击导航栏a滑动到相应位置 
+            !$(function(){
+
+            $('.sj').click(function (e) {
+                e.preventDefault();
+                click_scroll('#phone-page');
+            });
+            $('.sx').click(function (e) {
+                e.preventDefault();
+                click_scroll('#erji-page');
+            });
+            $('.zn').click(function (e) {
+                e.preventDefault();
+                click_scroll('#zn-page');
+            });
+            $('.sh').click(function (e) {
+                e.preventDefault();
+                click_scroll('#sh-page');
+            });
+
+            // 用户的显示隐藏
+            hover_show_hide('.header-user', '.user-list');
+
+
+            // 用户列表变色
+            hover_color('.user', '', 'color', '#00b9f2', '#000');
+
+
+
+            // // //回到顶部效果
+            back_top('.slide_last');
+
+            //滚动条距离顶部多少时显示隐藏
+            slide_show_hide('.slideBar');
+
+
+            //cookie判断
+            if (getCookie('username') != null) {
+                $('.header-user').css('background', 'url(images/user-touxiang.png) no-repeat'); // 换用户背景图
+                $('#user-login').text('个人中心');
+                $('#user-login').attr('href', '#');
+                $('#user-register').text('我的订单');
+                $('#user-register').attr('href', 'shop_car.html');
+                $('#user-order').text('M码通道');
+                $('#user-order').attr('href', '#');
+                $('#user-M').text('退出登录');
+                $('#user-M').attr('href', 'login.html');
+                $('#user-M').click(function (e) {
                     e.preventDefault();
-                    click_scroll('#phone-page');
+                    alert('用户' + getCookie('username') + '已退出登录');
+                    delCookie("username");
+                    location.reload();
                 });
-                $('.sx').click(function (e) {
-                    e.preventDefault();
-                    click_scroll('#erji-page');
-                });
-                $('.zn').click(function (e) {
-                    e.preventDefault();
-                    click_scroll('#zn-page');
-                });
-                $('.sh').click(function (e) {
-                    e.preventDefault();
-                    click_scroll('#sh-page');
-                });
+                //发送ajax请求获取购物车的商品数量 显示在小红点上面
+                getCartNum(getCookie('username'));
+            };
+            if (getCookie('username') == null) {
+                $('.header-user').css('background', 'url(images/icon-user-white.png) no-repeat');
+            }
 
-                // 用户的显示隐藏
-                hover_show_hide('.header-user', '.user-list');
-
-
-                // 用户列表变色
-                hover_color('.user', '', 'color', '#00b9f2', '#000');
-
-
-
-                // // //回到顶部效果
-                back_top('.slide_last');
-
-                //滚动条距离顶部多少时显示隐藏
-                slide_show_hide('.slideBar');
-
-
-                //cookie判断
-                if (getCookie('username') != null) {
-                    $('.header-user').css('background', 'url(images/user-touxiang.png) no-repeat'); // 换用户背景图
-                    $('#user-login').text('个人中心');
-                    $('#user-login').attr('href', '#');
-                    $('#user-register').text('我的订单');
-                    $('#user-register').attr('href', 'shop_car.html');
-                    $('#user-order').text('M码通道');
-                    $('#user-order').attr('href', '#');
-                    $('#user-M').text('退出登录');
-                    $('#user-M').attr('href', 'login.html');
-                    $('#user-M').click(function (e) {
-                        e.preventDefault();
-                        alert('用户' + getCookie('username') + '已退出登录');
-                        delCookie("username");
-                        location.reload();
-                    });
-                    //发送ajax请求获取购物车的商品数量 显示在小红点上面
-                    getCartNum( getCookie('username'));
-                };
-                if (getCookie('username') == null) {
-                    $('.header-user').css('background', 'url(images/icon-user-white.png) no-repeat');
-                }
-
-                ////改变二级菜单商品详情
-                nav_shop('.sj');
-                nav_shop('.sx');
-                nav_shop('.zn');
-                nav_shop('.sh');
-            })
+            ////改变二级菜单商品详情
+            nav_shop('.sj');
+            nav_shop('.sx');
+            nav_shop('.zn');
+            nav_shop('.sh');
+        })
         },
 
         nav_style: function () {

@@ -37,7 +37,7 @@
     width: 100%;
     min-width: 1240px;
     height: 70px;
-    background-color: #f6f8fb;
+    background: #f6f8fb;
 }
 
 .head {
@@ -82,8 +82,8 @@
     position: fixed;
     top: 0;
     z-index: 999;
-    opacity: 0.8;
-    transition: all .5s;
+    background: rgba(246, 248, 251, 0.9);
+    border-bottom: 1px solid #dedede;
     display: none;
 }
 

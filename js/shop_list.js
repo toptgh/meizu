@@ -10,95 +10,101 @@ var shop_list = (function () {
         event: function () {
             var _this = this;
 
-            //点击底下图片显示大图
-            $(".imgxiao img").click(function (e) {
-                // e.preventDefault();
-                var img = $(this).attr('src'); //获取当前图片路径
-                $(".imgbox_show img").attr({
-                    'src': img, //把当前图片路径给大图片
-                });
-                $(".imgbox_show img").css({
-                    "opacity": 0.4, //大图透明度
-                });
-                $(".imgbox_show img").animate({
-                    "opacity": 1
-                }, 700);
-            });
 
-            //选套餐按钮的点击加边框
-            $(".choice_btn button").click(function (e) {
-                //e.preventDefault();
-                $(this).addClass('buttonclicked').siblings().removeClass('buttonclicked'); //选中的框添加边框的class，旁边的移除class
-                let type = $(this).html(); //获取当前框的内容
-                $(this).parent().parent().attr("data-type", type); //把当前框的内容当值以自定义属性添加到祖父身上 方便后期获取
-                let addfei = 0;
-                let defaultPrice = 2798; //默认价格
-                let $choices = $(".buttonclicked"); //获取所有选中的框
-                //each 遍历选中框
-                $.each($choices, function (indexInArray, valueOfElement) {
-                    addfei += parseInt($choices.eq(indexInArray).attr("data-addfei")) //获取所有选中框的class值，这个class的值是每个套餐都有不同的价格
-                });
-                if (addfei <= 0) { //判断选中的套餐有没有要加钱的
-                    $("#price").html(defaultPrice + '.00'); //没有则顶部显示默认价格 
-                } else {
-                    $("#price").html(defaultPrice + addfei + '.00'); //有则显示在顶部价格为所选中套餐的价格总和 
-                }
-            });
-
-            //选中型号改变头部型号
-            $('.btnname').click(function () {
-                let PhoneName = $(this).text();
-                $('.phone_name').text(PhoneName);
-            })
-
-            //数量加减
-            $(".changenum").click(function (e) {
-                e.preventDefault();
-                let num = parseInt($(this).siblings("input").val()); //获取input的值
-                if ($(this).is(".addBtn")) {
-                    num++;
-                    if (num >= 9) {
-                        num == 9;
-                        $(".addBtn").attr("disabled", true);
-                        $(".subBtn").removeAttr("disabled");
-                    }
-                    if (num > 1) {
-                        $(".subBtn").removeAttr("disabled");
-                    } else {
-                        $(".subBtn").attr("disabled", true);
-                    }
-                    $(this).siblings("input").val(num);
-                }
-                if ($(this).is(".subBtn")) {
-                    num--;
-                    if (num <= 1) {
-                        num == 1;
-                        $(".subBtn").attr("disabled", true);
-                        $(".addBtn").removeAttr("disabled");
-                    }
-                    $(this).siblings("input").val(num);
-                }
-            });
-
-            //选择手机颜色改变左边展示图片颜色
-            $('.black_img').click(function () {
-                _this.change_img('.imgbox_show img', 'images/hei.jpg', '.click1 img', 'images/hei.jpg',
-                    '.click2 img', 'images/hei2.jpg', '.click3 img', 'images/hei3.jpg', '.click4 img', 'images/hei4.jpg');
-            });
-            $('.white_img').click(function () {
-                _this.change_img('.imgbox_show img', 'images/16th.jpg', '.click1 img', 'images/16th.jpg',
-                    '.click2 img', 'images/16th2.jpg', '.click3 img', 'images/16th3.jpg', '.click4 img', 'images/16th4.jpg');
-            });
-            $('.blue_img').click(function () {
-                _this.change_img('.imgbox_show img', 'images/lan.jpg', '.click1 img', 'images/lan.jpg',
-                    '.click2 img', 'images/lan2.jpg', '.click3 img', 'images/lan3.jpg', '.click4 img', 'images/lan4.jpg');
-            });
-
-
-
-
-            //这里调用的函数都是common.js里面的函数 通过!$(function(){})实现
             !$(function () {
+
+
+                //点击底下图片显示大图
+                $(".imgxiao img").click(function (e) {
+                    // e.preventDefault();
+                    var img = $(this).attr('src'); //获取当前图片路径
+                    $(".imgbox_show img").attr({
+                        'src': img, //把当前图片路径给大图片
+                    });
+                    $(".imgbox_show img").css({
+                        "opacity": 0.4, //大图透明度
+                    });
+                    $(".imgbox_show img").animate({
+                        "opacity": 1
+                    }, 700);
+                });
+
+                //选套餐按钮的点击加边框
+                $(".choice_btn button").click(function (e) {
+                    //e.preventDefault();
+                    $(this).addClass('buttonclicked').siblings().removeClass('buttonclicked'); //选中的框添加边框的class，旁边的移除class
+                    let type = $(this).html(); //获取当前框的内容
+                    $(this).parent().parent().attr("data-type", type); //把当前框的内容当值以自定义属性添加到祖父身上 方便后期获取
+                    let addfei = 0;
+                    let defaultPrice = 2798; //默认价格
+                    let $choices = $(".buttonclicked"); //获取所有选中的框
+                    //each 遍历选中框
+                    $.each($choices, function (indexInArray, valueOfElement) {
+                        addfei += parseInt($choices.eq(indexInArray).attr("data-addfei")) //获取所有选中框的class值，这个class的值是每个套餐都有不同的价格
+                    });
+                    if (addfei <= 0) { //判断选中的套餐有没有要加钱的
+                        $("#price").html(defaultPrice + '.00'); //没有则顶部显示默认价格 
+                    } else {
+                        $("#price").html(defaultPrice + addfei + '.00'); //有则显示在顶部价格为所选中套餐的价格总和 
+                    }
+                });
+
+                //选中型号改变头部型号
+                $('.btnname').click(function () {
+                    let PhoneName = $(this).text();
+                    $('.phone_name').text(PhoneName);
+                })
+
+                //数量加减
+                $(".changenum").click(function (e) {
+                    e.preventDefault();
+                    let num = parseInt($(this).siblings("input").val()); //获取input的值
+                    if ($(this).is(".addBtn")) {
+                        num++;
+                        if (num >= 9) {
+                            num == 9;
+                            $(".addBtn").attr("disabled", true);
+                            $(".subBtn").removeAttr("disabled");
+                        }
+                        if (num > 1) {
+                            $(".subBtn").removeAttr("disabled");
+                        } else {
+                            $(".subBtn").attr("disabled", true);
+                        }
+                        $(this).siblings("input").val(num);
+                    }
+                    if ($(this).is(".subBtn")) {
+                        num--;
+                        if (num <= 1) {
+                            num == 1;
+                            $(".subBtn").attr("disabled", true);
+                            $(".addBtn").removeAttr("disabled");
+                        }
+                        $(this).siblings("input").val(num);
+                    }
+                });
+
+                //选择手机颜色改变左边展示图片颜色
+                $('.black_img').click(function () {
+                    _this.change_img('.imgbox_show img', 'images/hei.jpg', '.click1 img', 'images/hei.jpg',
+                        '.click2 img', 'images/hei2.jpg', '.click3 img', 'images/hei3.jpg', '.click4 img', 'images/hei4.jpg');
+                });
+                $('.white_img').click(function () {
+                    _this.change_img('.imgbox_show img', 'images/16th.jpg', '.click1 img', 'images/16th.jpg',
+                        '.click2 img', 'images/16th2.jpg', '.click3 img', 'images/16th3.jpg', '.click4 img', 'images/16th4.jpg');
+                });
+                $('.blue_img').click(function () {
+                    _this.change_img('.imgbox_show img', 'images/lan.jpg', '.click1 img', 'images/lan.jpg',
+                        '.click2 img', 'images/lan2.jpg', '.click3 img', 'images/lan3.jpg', '.click4 img', 'images/lan4.jpg');
+                });
+
+
+
+
+
+
+                //鼠标下拉标题固定在顶部
+                fixed(".head-box", "head_fixed", 81);
 
                 // 用户的显示隐藏
                 hover_slide('.header-user', '.user-list');
@@ -153,43 +159,46 @@ var shop_list = (function () {
 
                 //加入购物车
                 $(".gotocart").click(function (e) {
-                    if (getCookie("username") == null) { //未登录
+
+                    if (getCookie("username") == null){ //未登录
+                        window.location.href = 'http://localhost:1012/meizu/login.html?redirect=http://localhost:1012/meizu/shop_list.html'; 
+                    }else{//已登录
                         if ($(this).is('.buy')) { //立即购买按钮
-                            window.location.href = 'http://localhost:1012/meizu/login.html?redirect=http://localhost:1012/meizu/shop_list.html';
+                            _this.addcar();
+                            window.location.href = 'http://localhost:1012/meizu/shop_car.html';
                         }
-                        if ($(this).is('.car')) { //加入购物车按钮
-                            alert('检测到您还未登录,请在页面右上角点击登录~');
+                        if($(this).is('.car')){//加入购物车按钮
+                            _this.addcar();
                         }
-                    } else { //已登录
-                        let username = getCookie("username"); //获取用户名
-                        let count = parseInt($("#boughtNum").val()); //获取商品数量
-                        let cid = '';
-                        //遍历获取每个选中框的data-id存到cid上面
-                        $.each($(".buttonclicked"), function (indexInArray, valueOfElement) {
-                            cid += this.getAttribute("data-id");
-                        });
-                        console.log(cid);
-                        // console.log("username=" + username + "&cid=" + cid + "&count=" + count);
-                        //AJAX 发送POST请求 (url,data,success(data,textStatus,jqXHR),dataType)
-                        $.post("http://localhost:1012/meizu/admin/php/addToCart.php",
-                            "username=" + username + "&cid=" + cid + "&count=" + count,
-                            function (data, textStatus, jqXHR) {
-                                // console.log(data);
-                                if (data == '1') {
-                                    alert('成功加入购物车！');
-                                    _this.getCartNum(username); //获取购物车商品数量
-                                } else {
-                                    alert('加入购物车失败！');
-                                }
-                            }, "text");
-                        _this.uploadgoods(cid); //上传选中的套餐数据
+                        
                     }
                 });
-
-
-
             })
         },
+
+        addcar: function () {
+            let username = getCookie("username"); //获取用户名
+            let count = parseInt($("#boughtNum").val()); //获取商品数量
+            let cid = '';
+            //遍历获取每个选中框的data-id存到cid上面
+            $.each($(".buttonclicked"), function (indexInArray, valueOfElement) {
+                cid += this.getAttribute("data-id");
+            });
+            console.log(cid);
+            console.log("username=" + username + "&cid=" + cid + "&count=" + count);
+            //AJAX 发送POST请求 (url,data,success(data,textStatus,jqXHR),dataType)
+            $.post("http://localhost:1012/meizu/admin/php/addToCart.php",
+                "username=" + username + "&cid=" + cid + "&count=" + count,
+                function (data, textStatus, jqXHR) {
+                    // console.log(data);
+                    if (data == '1') {
+                        getCartNum(username); //获取购物车商品数量
+                    } else {
+                        alert('加入购物车失败！');
+                    }
+                }, "text");
+        },
+
         nav_style: function () {
             var _this = this;
             // 导航栏的显示
@@ -271,29 +280,6 @@ var shop_list = (function () {
             $(ele4).attr('src', e4);
             $(ele5).attr('src', e5);
         },
-
-
-
-        //上传选中的套餐数据
-        uploadgoods: function (cid) {
-            let xinghao = $(".xinghao").attr("data-type"); //型号
-            let wangluo = $(".wangluo").attr("data-type"); //网络
-            let yanse = $(".yanse ").attr("data-type"); //颜色
-            let neicun = $(".neicun").attr("data-type"); //内存
-            let taocan = $(".taocan").attr("data-type"); //套餐
-            let price = parseFloat($("#price").html()); //价格
-            let scount = 1; //parseInt($("#boughtNum").val());//数量
-            let sendStr = "goodsId=" + cid + "&goodsName=" + xinghao + "&goodsType=" + wangluo +
-                "&beiyong1=" + yanse + "&beiyong2=" + neicun + "&beiyong3=" + taocan +
-                "&goodsPrice=" + price + "&goodsCount=" + scount;
-            console.log(sendStr);
-            $.post("http://localhost:1012/meizu/admin/php/saveGoods.php",
-                sendStr,
-                function (data, textStatus, jqXHR) {
-                    console.log(data);
-                }, "text"
-            );
-        }
 
     }
 }())

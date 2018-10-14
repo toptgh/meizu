@@ -27,6 +27,16 @@
       document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
   };
 
+  //添加Cookie
+  var addCookie = window.addCookie = function (item, value, dayCount) {
+    var d = new Date();
+    if (dayCount == undefined || dayCount == 0) {
+      d.setDate(d.getMinutes() + 10);
+    } else {
+      d.setDate(d.getDate() + dayCount);
+    }
+    document.cookie = item + "=" + escape(value) + ";expires=" + d.toGMTString();
+  }
   //改变二级菜单商品详情
   var nav_shop = window.nav_shop = function (ele) {
     $(ele).mouseover(function () {
@@ -63,6 +73,19 @@
         $(ele).show()
       } else {
         $(ele).hide()
+      }
+    })
+  }
+
+  //固定导航栏
+  var fixed = window.fixed = function (ele, ele2, num) {
+    $(document).scroll(function () {
+      let scrollTop = $(document).scrollTop();
+      if (scrollTop > num) {
+        $(ele).addClass(ele2);
+        $(ele).slideDown(300);
+      } else {
+        $(ele).removeClass(ele2);
       }
     })
   }
@@ -106,7 +129,7 @@
     $.post("http://localhost:1012/meizu/admin/php/GetCartCount.php",
       "username=" + ele,
       function (data, textStatus, jqXHR) {
-        $(".goodnum").html(parseInt(data)||0);
+        $(".goodnum").html(parseInt(data) || 0);
       },
       "text"
     )

@@ -68,6 +68,7 @@ var login = (function () {
 
 
         loginSuccess: function (data) {
+            var _this = this;
             if (data.code == 200) {
                 // 后台会返回一个token值
                 // token 是用户登录成功时,后台自动生成的一串代码
@@ -77,12 +78,12 @@ var login = (function () {
                 var search = location.search; //获取当前网址问号后面的内容
                 //记录登录状态 保存到cookie
                 if ($(".rember input").is(':checked')) {
-                    document.cookie = "username=" + data.data.username;
+                    this.setCookie("username",data.data.username,7);
                     if (search == '') {
                         location.href = 'http://localhost:1012/meizu/index.html';
                     } else {
                         url = search.split("=")[1];
-                        location.href = url;//跳转为问号后面的网址
+                        location.href = url; //跳转为问号后面的网址
                     }
                 } else {
 
@@ -92,7 +93,7 @@ var login = (function () {
                         url = search.split("=")[1];
                         location.href = url;
                     }
-                    document.cookie = "username=" + data.data.username;
+                    this.setCookie("username",data.data.username);
                 }
             } else {
                 if (($.trim($("#username").val()) != '') && ($("#password").val() != '')) {
@@ -101,6 +102,13 @@ var login = (function () {
                     this.ShowMsg('用户名或者密码不能为空');
                 }
             }
+        },
+
+//设置cookie
+        setCookie: function (name, value, iDay) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + iDay);
+            document.cookie = name + '=' + value + ';expires=' + oDate;
         },
 
         loginSuccess2: function (data) {
