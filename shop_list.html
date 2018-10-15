@@ -123,7 +123,7 @@
             <div class="product_choice">
                 <div class="preview">
                     <ul class="imgBox">
-                        <li class="imgbox_show"><img  src="images/hei.jpg" /></li>
+                        <li class="imgbox_show"><img src="images/hei.jpg" /></li>
                     </ul>
                     <ul class="imgxiao-box">
                         <li class="imgxiao click1"><img src="images/hei.jpg" /></li>
@@ -278,92 +278,19 @@
             <div class="swiper-button-prev" id="prev"></div>
         </div>
         <!--  底部 -->
-        <div class="foot">
-            <div class="foot_top">
-                <ul class="services">
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-tianmaoshunfengbaoyou"></i>
-                            全场顺风包邮</a></li>
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-shandian-shi"></i>
-                            100+城市次日送达</a></li>
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-boxxiangzi"></i>
-                            7天无理由退货</a></li>
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-circlearrow"></i>
-                            15天换货保障</a></li>
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-banshou_Line"></i>
-                            1年免费保修</a></li>
-                    <li><a href="javascript:void(0)">
-                            <i class="iconfont icon-jianzhu"></i>
-                            上门快修</a></li>
-                </ul>
-                <div class="contact">
-                    <p>周一至周日 7:30-24:00</p>
-                    <p>400-788-3333</p>
-                    <a href="javascript:void(0)">在线客服</a>
-                </div>
-            </div>
-            <div class="foot_bot">
-                <div class="foot_bot_links">
-                    <a href="javascript:void(0)">了解魅族</a>
-                    <a href="javascript:void(0)">加入我们</a>
-                    <a href="javascript:void(0)">联系我们</a>
-                    <a href="javascript:void(0)">Flyme</a>
-                    <a href="javascript:void(0)">魅族社区</a>
-                    <a href="javascript:void(0)">天猫旗舰店</a>
-                    <a href="javascript:void(0)">问题反馈</a>
-                    <a href="javascript:void(0)">线上销售授权名单公示</a>
-                    <a href="javascript:void(0)">出版物经营许可证</a>
-                    <a href="javascript:void(0)">简体中文</a>
-
-                </div>
-                <a class="copyright-text">©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</a>
-                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备13003602号-2</a>
-                <a href="http://store.res.meizu.com/layout/img/icp-abd57f3b39.png" target="_blank">合字B2-20170010</a>
-                <a href="javascript:void(0)">营业执照</a>
-                <a href="javascript:void(0)">法律声明</a>
-                <div class="wx">
-                    <a href="javascript:void(0)">
-                        <i class="iconfont icon-weibo"></i>
-                    </a>
-                    <a href="javascript:void(0)">
-                        <i class="iconfont icon-wechat"></i>
-                    </a>
-                    <a href="javascript:void(0)">
-                        <i class="iconfont icon-062qqkongjian"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div class="foot"></div>
 
         <!-- 回到顶部 -->
-        <div class="slideBar">
-            <ul>
-                <li class="slide_first">
-                    <a href="shop_car.html">
-                        <i class="iconfont icon-xiazai1"></i>
-                        <b class="goodnum">0</b>
-                        <span>购物车</span>
-                    </a></li>
-                <li class="slide_second">
-                    <a href="javascript:void(0)">APP</a>
-                    <p><img src="images/mz_shopApp.png" />扫码下载魅族商城APP</p>
-                </li>
-                <li class="slide_last"><a href="javascript:void(0)" title="回到顶部">
-                        <i class="iconfont icon-jiantoushang"></i>
-                        <span>回到顶部</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <div class="slideBar"></div>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/common.js"></script>
         <script src="js/shop_list.js"></script>
         <script src="js/swiper.min.js"></script>
         <script>
+            $('.foot').load('commonHTML/index_list_car_footer.html');
+            $('.slideBar').load('commonHTML/index_list_slideBar.html');
+
             shop_list.init();
         </script>
 </body>

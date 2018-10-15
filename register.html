@@ -14,18 +14,16 @@
 </head>
 
 <body>
-    <div class="logo-box">
-        <div class="logo">
-            <a href="index.html"></a>
-        </div>
-    </div>
+    <div id="header"></div>
     <div class="wrap">
         <div class="wrap-content">
             <form class="loginBox">
                 <p class="tit">注册 Flyme 账号</p>
                 <span id="login_msg"></span>
-                <input type="text" placeholder="手机号码" maxlength="20" id="phonenum" name="username" autocomplete="off" class="inputs" />
-                <input type="password" placeholder="密码" maxlength="20" id="password" name="password" autocomplete="off" class="inputs" />
+                <input type="text" placeholder="手机号码" maxlength="20" id="phonenum" name="username" autocomplete="off"
+                    class="inputs" />
+                <input type="password" placeholder="密码" maxlength="20" id="password" name="password" autocomplete="off"
+                    class="inputs" />
                 <p id="areacode">+86</p>
                 <ul class="phoneCode">
                     <div>常用区号</div>
@@ -81,49 +79,21 @@
                 <p class="mustknow">点击立即注册，即表示您同意并愿意遵守
                     <a href="javascript:void(0)">&nbsp;Flyme服务协议&nbsp;</a>和<a href="javascript:void(0)">&nbsp;法律声明&nbsp;</a>
                 </p>
-                <input type="button"  name="login-btn" value="立即注册" id="login" />
-                <a class="tologin"  href="login.html">登录</a>
+                <input type="button" name="login-btn" value="立即注册" id="login" />
+                <a class="tologin" href="login.html">登录</a>
             </form>
         </div>
     </div>
-    <div class="foot-box">
-        <div class="foot">
-            <div class="links">
-                <a href="javascript:void(0)">关于魅族</a><span></span>
-                <a href="javascript:void(0)">工作机会</a><span></span>
-                <a href="javascript:void(0)">联系我们</a><span></span>
-                <a href="javascript:void(0)">法律声明</a><span></span>
-                <a href="javascript:void(0)">常见问题</a><span></span>
-                <a id="lang" href="javascript:void(0)">简体中文&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            </div>
-            <div class="contact">
-                <span>客服热线 400-788-3333</span>
-                <a href="javascript:void(0)">在线客服</a>
-            </div>
-            <div class="wx">
-                <a href="javascript:void(0)">
-                    <i class="iconfont icon-weibo"></i>
-                </a>
-                <a href="javascript:void(0)">
-                    <i class="iconfont icon-wechat"></i>
-                </a>
-                <a href="javascript:void(0)">
-                    <i class="iconfont icon-062qqkongjian"></i>
-                </a>
-            </div>
-            <div class="copyright-text">
-                <span>©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</span>
-                <a href="" target="_blank">备案号：粤ICP备13003602号-4</a>
-                <a href="" target="_blank">经营许可证编号：粤B2-20130198</a>
-                <a href="javascript:void(0)">营业执照</a>
-            </div>
-        </div>
-    </div>
+    <div id="footer"></div>
     <script src="js/jquery.min.js"></script>
     <script src="admin/js/common/ajax.js"></script>
     <script src="admin/js/common/login_register.js"></script>
     <script src="admin/js/register.js"></script>
     <script>
+        $(function () {
+            $('#header').load('commonHTML/log_reg_header.html');
+            $('#footer').load('commonHTML/log_reg_footer.html');
+        });
         register.init('.loginBox');
     </script>
 </body>

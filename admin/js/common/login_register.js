@@ -14,9 +14,8 @@ $(function () {
     //点击上方连接，切换登录方式
     $(".tit a").click(function (e) {
         e.preventDefault();
-        //  $(".tit a").removeClass("titblue");
         $(this).addClass("titblue").siblings().removeClass("titblue");
-        // $(this).attr("data-checked",1);
+        //点击切换登录方式清除原来input框的内容
         $.each($(".inputs"), function (indexInArray, valueOfElement) {
             if ($.trim($(".inputs").eq(indexInArray).val()) != '') {
                 $(".inputs").eq(indexInArray).val('');
@@ -50,6 +49,8 @@ $(function () {
                 $(".loginBySMS a").text(num + "秒后重新获取");
             }, 1000);
     });
+
+    
     //国际区号选择框
     $("#areacode").click(function (e) {
         e.preventDefault();

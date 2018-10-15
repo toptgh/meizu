@@ -14,9 +14,8 @@
 </head>
 
 <body>
-      <div class="logo-box">
-            <div class="logo"><a href="index.html"></a></div>
-      </div>
+      <div id="header"></div>
+      <!-- 登录表单 -->
       <div class="wrap">
             <div class="wrap-content">
                   <form class="loginBox">
@@ -28,10 +27,10 @@
                         </div>
                         <span id="login_msg"></span>
                         <div class="loginByName">
-                              <input type="text" placeholder="手机号 / Flyme 账号" name="username" maxlength="50" id="username" autocomplete="off"
-                                    class="inputs" />
-                              <input type="password" placeholder="密码" name="password" maxlength="50" id="password" class="inputs"
-                                    autocomplete="off" />
+                              <input type="text" placeholder="手机号 / Flyme 账号" name="username" maxlength="50" id="username"
+                                    autocomplete="off" class="inputs" />
+                              <input type="password" placeholder="密码" name="password" maxlength="50" id="password"
+                                    class="inputs" autocomplete="off" />
                               <label class="rember">
                                     <input type="checkbox" />
                                     <span>记住登录状态</span>
@@ -49,9 +48,10 @@
                               <p>请使用最新Flyme系统相机扫码功能，扫码登录</p>
                         </div>
                         <div class="loginBySMS">
-                              <input type="text" placeholder="手机号码" maxlength="11"  name="username2" id="phonenum" autocomplete="off"
-                                    class="inputs" />
-                              <input type="text" placeholder="验证码" maxlength="6" name='password2' id="smstext" autocomplete="off" class="inputs" />
+                              <input type="text" placeholder="手机号码" maxlength="11" name="username2" id="phonenum"
+                                    autocomplete="off" class="inputs" />
+                              <input type="text" placeholder="验证码" maxlength="6" name='password2' id="smstext"
+                                    autocomplete="off" class="inputs" />
                               <a href="javascript:void(0)">获取验证码</a>
                               <p id="areacode">+86</p>
                               <ul class="phoneCode">
@@ -112,50 +112,21 @@
                               </ul>
                               <input type="button" value="登录" id="login2" name="login-btn2" />
                         </div>
-                        
                   </form>
             </div>
       </div>
-      <div class="foot-box">
-            <div class="foot">
-                  <div class="links">
-                        <a href="javascript:void(0)">关于魅族</a><span></span>
-                        <a href="javascript:void(0)">工作机会</a><span></span>
-                        <a href="javascript:void(0)">联系我们</a><span></span>
-                        <a href="javascript:void(0)">法律声明</a><span></span>
-                        <a href="javascript:void(0)">常见问题</a><span></span>
-                        <a id="lang" href="javascript:void(0)">简体中文&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                  </div>
-                  <div class="contact">
-                        <span>客服热线 400-788-3333</span>
-                        <a href="javascript:void(0)">在线客服</a>
-                  </div>
-                  <div class="wx">
-                        <a href="javascript:void(0)">
-                              <i class="iconfont icon-weibo"></i>
-                        </a>
-                        <a href="javascript:void(0)">
-                              <i class="iconfont icon-wechat"></i>
-                        </a>
-                        <a href="javascript:void(0)">
-                              <i class="iconfont icon-062qqkongjian"></i>
-                        </a>
-                  </div>
-                  <div class="copyright-text">
-                        <span>©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</span>
-                        <a href="" target="_blank">备案号：粤ICP备13003602号-4</a>
-                        <a href="" target="_blank">经营许可证编号：粤B2-20130198</a>
-                        <a href="javascript:void(0)">营业执照</a>
-                  </div>
-            </div>
-      </div>
+      <!-- 尾部 -->
+      <div id="footer"></div>
       <script src="js/jquery.min.js"></script>
       <script src="js/cookie.js"></script>
       <script src="admin/js/common/ajax.js"></script>
-      <script src="js/cookie.js"></script>
       <script src="admin/js/common/login_register.js"></script>
       <script src="admin/js/login.js"></script>
       <script>
+            $(function () {
+                  $('#header').load('commonHTML/log_reg_header.html');
+                  $('#footer').load('commonHTML/log_reg_footer.html');
+            });
             login.init('.loginBox');
       </script>
 </body>
