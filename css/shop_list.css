@@ -108,6 +108,7 @@
 }
 
 
+
 .imgBox li img {
     display: block;
     width: 560px;
@@ -348,19 +349,22 @@
     color: #595959;
     cursor: pointer;
 }
-.bg{
+
+.bg {
     padding-left: 43px;
 }
 
-.black_img{
+.black_img {
     background: url(../images/jyh.png) no-repeat 48px 2px;
     background-size: 35px;
 }
-.white_img{
+
+.white_img {
     background: url(../images/ysb.png) no-repeat 48px 2px;
     background-size: 35px;
 }
-.blue_img{
+
+.blue_img {
     background: url(../images/jgl.png) no-repeat 48px 2px;
     background-size: 35px;
 }

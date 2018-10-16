@@ -334,6 +334,7 @@ body {
 }
 
 .btn {
+    cursor: pointer;
     width: 24px;
     height: 24px;
     text-align: center;
@@ -438,7 +439,7 @@ body {
 }
 
 .checkout {
-    background-color: #DBDBDB;
+    background-color: red;
     width: 98px;
     height: 34px;
     border: none;

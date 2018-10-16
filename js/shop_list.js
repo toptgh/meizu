@@ -12,7 +12,10 @@ var shop_list = (function () {
 
 
             !$(function () {
-
+                //渲染二级导航栏
+                for (var i = 0; i < 8; i++) {
+                    $('.nav-phone').prepend('<li><a href="shop_list.html"><img src="images/sj3.png" /><p>魅族 16th</p>￥<span>2698起</span></a></li>');
+                }
 
                 //点击底下图片显示大图
                 $(".imgxiao img").click(function (e) {
@@ -40,7 +43,7 @@ var shop_list = (function () {
                     let $choices = $(".buttonclicked"); //获取所有选中的框
                     //each 遍历选中框
                     $.each($choices, function (indexInArray, valueOfElement) {
-                        addfei += parseInt($choices.eq(indexInArray).attr("data-addfei")) //获取所有选中框的class值，这个class的值是每个套餐都有不同的价格
+                        addfei += parseInt($choices.eq(indexInArray).attr("data-addfei")) //获取所有选中框的值，这个值是每个套餐都有不同的价格
                     });
                     if (addfei <= 0) { //判断选中的套餐有没有要加钱的
                         $("#price").html(defaultPrice + '.00'); //没有则顶部显示默认价格 
@@ -103,7 +106,7 @@ var shop_list = (function () {
 
 
 
-                //鼠标下拉标题固定在顶部
+                //鼠标滑动标题固定在顶部
                 fixed(".head-box", "head_fixed", 81);
 
                 // 用户的显示隐藏
@@ -121,7 +124,7 @@ var shop_list = (function () {
                 //滚动条距离顶部多少时显示隐藏
                 slide_show_hide('.slideBar');
 
-                //cookie判断
+                //cookie判断用户样式
                 if (getCookie('username') != null) {
                     $('.header-user').css('background', 'url(images/user-touxiang.png) no-repeat'); // 换用户背景图
                     $('#user-login').text('我的订单');
@@ -160,17 +163,17 @@ var shop_list = (function () {
                 //加入购物车
                 $(".gotocart").click(function (e) {
 
-                    if (getCookie("username") == null){ //未登录
-                        window.location.href = 'http://localhost:1012/meizu/login.html?redirect=http://localhost:1012/meizu/shop_list.html'; 
-                    }else{//已登录
+                    if (getCookie("username") == null) { //未登录
+                        window.location.href = 'http://localhost:1012/meizu/login.html?redirect=http://localhost:1012/meizu/shop_list.html';
+                    } else { //已登录
                         if ($(this).is('.buy')) { //立即购买按钮
                             _this.addcar();
                             window.location.href = 'http://localhost:1012/meizu/shop_car.html';
                         }
-                        if($(this).is('.car')){//加入购物车按钮
+                        if ($(this).is('.car')) { //加入购物车按钮
                             _this.addcar();
                         }
-                        
+
                     }
                 });
             })
@@ -229,7 +232,7 @@ var shop_list = (function () {
                     $('.header-user').css('background', 'url(images/icon-user.png) no-repeat'); // 换未登录用户背景图
                 };
             });
-            $('.nav-box').slideDown(200);
+            $('.nav-box').stop().slideDown(200);
         },
 
         nav_mouseleave: function () {

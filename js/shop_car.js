@@ -10,6 +10,7 @@ var shop_car = (function () {
             var _this = this;
             !$(function () {
 
+
                 //打开页面时判断cookie,获取购物车内商品数量
 
                 let currname = getCookie("username");
@@ -20,17 +21,15 @@ var shop_car = (function () {
                     $(".menu_logined").css("display", "block");
                     $(".menu_logined a:eq(1)").html(currname + "的商城");
                     // $(".good_info").remove();
-                    _this.getCartNum(currname);
-                    _this.getUserCart(currname);
-                    // selectednum();
+                    _this.getCartNum(currname); // 获取购物车商品数量
+                    _this.getUserCart(currname); //把商品数据渲染到页面
+                    //删除购物车商品
                     $("body").on("click", ".add", function (e) {
                         e.preventDefault();
                         let gid = $(this).attr("data-gid");
-                        alert("已删除选中商品");
                         let goodsId = [];
                         goodsId.push(gid);
                         let currname = getCookie("username")
-                        console.log(goodsId);
                         $(this).parent().remove();
                         _this.deleteCartGood(goodsId, currname);
                     });
@@ -46,11 +45,11 @@ var shop_car = (function () {
                     location.reload();
                 })
                 //定位固定底部结算栏
-                fixed('.cart-footer', 'fixed', 100);
+                fixed('.cart-footer', 'fixed', 200);
 
                 $('body').on("click", ".numAdd", function () { //数量加一事件
                     AddBtn(this);
-                    _this.calcTotal(this);
+                    _this.calcTotal(this); //计算总价格
                 });
                 $("body").on("click", ".numSub", function () { //数量减1事件
                     subBtn(this);
@@ -76,7 +75,7 @@ var shop_car = (function () {
                     $(obj).siblings(".num").val(num);
                     total.html(parseFloat(price.html() * num));
                     _this.calcTotal();
-                    _this.updateGoodNum(gid, num, currname);
+                    _this.updateGoodNum(gid, num, currname); //更新购物车数量
                 };
                 //减的按钮
                 function subBtn(obj) {
@@ -95,16 +94,20 @@ var shop_car = (function () {
                     _this.updateGoodNum(gid, num, currname);
                 };
 
-                //选择框
-                $(".select_all").click(function (e) { //全选效果 
+                //选择框 //全选效果 
+                $(".select_all").click(function (e) {
                     //    e.preventDefault();
                     let isChecked = this.checked;
+                    //遍历全选框
                     $.each($(".select_all"), function (indexInArray, valueOfElement) {
-                        $(".select_all")[indexInArray].checked = isChecked;
+                        $(".select_all")[indexInArray].checked = isChecked; //每个(3个)全选框选中
                     });
+                    //遍历单选框
                     $.each($(".good_info .checkboxs"), function (indexInArray, valueOfElement) {
-                        $(".good_info .checkboxs")[indexInArray].checked = isChecked;
+                        $(".good_info .checkboxs")[indexInArray].checked = isChecked; //第几个单选框选中
+
                     });
+                    // 获取全选框的标签
                     if ($(".select_all")[0].checked) {
                         singelCheckBoxEvent();
                     }
@@ -114,12 +117,11 @@ var shop_car = (function () {
                 $("body").on("click", ".good_info .checkboxs", function () {
                     singelCheckBoxEvent();
                 });
-                //单选框事件
+                //单选框选中改变总价
                 function singelCheckBoxEvent() {
                     let $checkboxs = $(".good_info .checkboxs");
                     let goodsTotal = 0;
-                    let status = [],
-                        hasUncheck = false;
+                    let hasUncheck = false;
                     $.each($checkboxs, function (indexInArray, valueOfElement) {
                         if (($checkboxs)[indexInArray].checked) {
                             let total = $checkboxs.eq(indexInArray).siblings(".good_sum").children("span").html();
@@ -127,17 +129,13 @@ var shop_car = (function () {
                         } else {
                             hasUncheck = true;
                         }
-                        //status.push(($checkboxs)[indexInArray].checked);
                     });
                     currentGoodsTotal = $("#totalmoney").html();
                     if (goodsTotal != currentGoodsTotal) { //修改总金额
-                        //   $("#totalmoney").html('');
-                        //   $("#totalmoney").html(goodsTotal);
                         _this.calcTotal();
 
                     }
                     //判断是否出现为选中的商品，出现则取消全选框
-                    //if(status.indexOf(false)>=0){
                     if (hasUncheck) {
                         $.each($(".select_all"), function (indexInArray, valueOfElement) {
                             $(".select_all")[indexInArray].checked = false;
@@ -175,7 +173,7 @@ var shop_car = (function () {
         },
 
 
-        // //计算总数
+        // //计算总价格
         calcTotal: function () {
             var _this = this;
             let good_sum = $(".good_sum").children("span");
@@ -191,7 +189,7 @@ var shop_car = (function () {
             this.selectednum(); //获取总个数和已选择的个数
         },
 
-        //获取总个数和已选择的个数
+        //获取总共多少商品和已选择商品的个数
         selectednum: function () {
             let $checkboxs = $(".good_info .checkboxs");
             // console.log($checkboxs);
@@ -209,7 +207,7 @@ var shop_car = (function () {
             $("#selectcount").html(selected);
         },
 
-        //更新商品数量
+        //更新购物车商品数量
         updateGoodNum: function (gid, num, name) {
             if (gid.length != 5 || num < 0 || num > 9 || name == "" || name == undefined || name == null) {
                 return;
@@ -253,7 +251,7 @@ var shop_car = (function () {
             }
         },
 
-        //获取购物车数量
+        //获取购物车商品数量
         getCartNum: function (currname) {
             $.post("http://localhost:1012/meizu/admin/php/GetCartCount.php",
                 "username=" + currname,
@@ -276,16 +274,16 @@ var shop_car = (function () {
 
         },
 
-        //获取用户购物车
+        //获取和商品ID符合的数据
         getUserCart: function (name) {
             var _this = this;
             $.ajax({
                 type: "post",
-                url: "http://localhost:1012/meizu/admin/php/getShoppingCart.php",
+                url: "http://localhost:1012/meizu/admin/php/getShoppingCart.php", //返回匹配符合商品ID的商品数据
                 data: "username=" + name,
                 dataType: "text",
                 success: function (response) {
-                    // console.log(response);
+                    console.log(JSON.parse(response));
                     if (JSON.parse(response)) {
                         _this.insertGood(JSON.parse(response));
                     } else {
@@ -295,7 +293,7 @@ var shop_car = (function () {
             });
         },
 
-        //插入商品
+        //插入商品数据 渲染到页面
         insertGood: function (data) {
             var _this = this;
             let total = 0,
@@ -304,7 +302,7 @@ var shop_car = (function () {
                 total = parseFloat(data[indexInArray].goodsPrice) * parseInt(data[indexInArray].goodsCount);
                 HtmlStr += "<div class='good_info' data-gid='" + data[indexInArray].goodsId + "'> <input type='checkbox' class='checkboxs'/>" +
                     "<img src='" + data[indexInArray].goodsImg + "'/><div class='good_intro'><h4>" + data[indexInArray].goodsName +
-                    "</h4><p>" + data[indexInArray].goodsType + '  ' + data[indexInArray].yanse + '  ' + data[indexInArray].neicun + '  ' + data[indexInArray].taocan +"</p></div>" +
+                    "</h4><p>" + data[indexInArray].goodsType + '  ' + data[indexInArray].yanse + '  ' + data[indexInArray].neicun + '  ' + data[indexInArray].taocan + "</p></div>" +
                     "<p class='good_price'>￥<span>" + data[indexInArray].goodsPrice + '.00' + "</span></p>" +
                     "<div class='good_num'><input type='button' value='-' class='numSub btn''/>" +
                     "<input type='text' class='num' value='" + data[indexInArray].goodsCount + "'/>" +

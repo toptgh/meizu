@@ -69,10 +69,10 @@
   var slide_show_hide = window.slide_show_hide = function (ele) {
     $(document).scroll(function () {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      if (scrollTop > 300) {
-        $(ele).show()
+      if (scrollTop > 350) {
+        $(ele).stop().slideDown(500);
       } else {
-        $(ele).hide()
+        $(ele).stop().slideUp(100);
       }
     })
   }

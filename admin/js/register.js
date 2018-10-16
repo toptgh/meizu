@@ -13,7 +13,7 @@ var register = (function () {
             var _this = this;
             // 提交按钮
             this.$loginBtn.onclick = function () {
-                //验证用户名密码不为空
+                //正则验证用户名密码
                 if (($.trim($("#phonenum").val()) != '') && ($("#password").val() != '')) {
                     let username = $.trim($("#phonenum").val());
                     let phonereg = /^1[3-9]\d{9}$/;
@@ -70,7 +70,7 @@ var register = (function () {
             if (data.code == 200) {
                 //   注册成功
                 alert('注册成功！请返回登录');
-                window.location.href = 'login.html';
+                window.location.href = 'http://localhost:1012/meizu/login.html';
             } else if (data.code == 1000) {
                 //用户名已存在
                 this.ShowMsg(data.msg);
