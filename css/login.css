@@ -8,7 +8,7 @@
     right:10px;
     top:10px;
     cursor: pointer;
-    background: url(../images/login_qr.png);
+    background: url(../images/login_qr.png) no-repeat;
 }
 
 .tit{

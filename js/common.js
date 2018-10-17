@@ -111,9 +111,9 @@
   //鼠标滑过从上往下显示、隐藏
   var hover_slide = window.hover_slide = function (ele, ele2) {
     $(ele).hover(function () {
-      $(ele2).stop().slideDown();
+      $(ele2).show();
     }, function () {
-      $(ele2).stop().slideUp();
+      $(ele2).hide();
     });
   }
 
