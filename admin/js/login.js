@@ -18,7 +18,7 @@ var login = (function () {
 
             // 账号登录
             this.$loginBtn.onclick = function () {
-                    // 发送ajax，验证用户名和密码
+                   // 发送ajax，验证用户名和密码
                     var params = {
                         method: 'post',
                         data: {
@@ -32,6 +32,7 @@ var login = (function () {
                     }
                     sendAjax('http://localhost:1012/meizu/admin/php/login.php', params);
                 },
+    
 
                 //验证码登录
                 this.$loginBtn2.onclick = function () {

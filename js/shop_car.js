@@ -45,7 +45,7 @@ var shop_car = (function () {
                     location.reload();
                 })
                 //定位固定底部结算栏
-                fixed('.cart-footer', 'fixed', 200);
+                // fixed('.cart-footer', 'fixed', 200);
 
                 $('body').on("click", ".numAdd", function () { //数量加一事件
                     AddBtn(this);
