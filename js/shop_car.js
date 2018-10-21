@@ -212,7 +212,7 @@ var shop_car = (function () {
             if (gid.length != 5 || num < 0 || num > 9 || name == "" || name == undefined || name == null) {
                 return;
             }
-            $.post("http://localhost:1012/meizu/admin/php/updateGoodsCount.php",
+            $.post("admin/php/updateGoodsCount.php",
                 "username=" + name + "&goodsId=" + gid + "&goodsCount=" + num,
                 function (data, textStatus, jqXHR) {
                     // console.log(data);
@@ -236,7 +236,7 @@ var shop_car = (function () {
                 }
             }
             for (let i = 0; i < len; i++) {
-                $.post("http://localhost:1012/meizu/admin/php/deleteUserCart.php",
+                $.post("admin/php/deleteUserCart.php",
                     "username=" + name + "&goodsId=" + gids[i],
                     function (data, textStatus, jqXHR) {
                         console.log(data);
@@ -253,7 +253,7 @@ var shop_car = (function () {
 
         //获取购物车商品数量
         getCartNum: function (currname) {
-            $.post("http://localhost:1012/meizu/admin/php/GetCartCount.php",
+            $.post("admin/php/GetCartCount.php",
                 "username=" + currname,
                 function (data, textStatus, jqXHR) {
                     // console.log(data);
@@ -279,7 +279,7 @@ var shop_car = (function () {
             var _this = this;
             $.ajax({
                 type: "post",
-                url: "http://localhost:1012/meizu/admin/php/getShoppingCart.php", //返回匹配符合商品ID的商品数据
+                url: "admin/php/getShoppingCart.php", //返回匹配符合商品ID的商品数据
                 data: "username=" + name,
                 dataType: "text",
                 success: function (response) {
@@ -327,7 +327,7 @@ var shop_car = (function () {
                 }
             }
             for (let i = 0; i < len; i++) {
-                $.post("http://localhost:1012/meizu/admin/php/deleteUserCart.php",
+                $.post("admin/php/deleteUserCart.php",
                     "username=" + name + "&goodsId=" + gids[i],
                     function (data, textStatus, jqXHR) {
                         console.log(data);

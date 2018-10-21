@@ -34,7 +34,7 @@ var register = (function () {
                                 _this.register(data);
                             }
                         }
-                        sendAjax('http://localhost:1012/meizu/admin/php/register.php', params);
+                        sendAjax('admin/php/register.php', params);
                     } else {
                         _this.ShowMsg('用户名和密码不符合要求');
                     }
@@ -70,7 +70,7 @@ var register = (function () {
             if (data.code == 200) {
                 //   注册成功
                 alert('注册成功！请返回登录');
-                window.location.href = 'http://localhost:1012/meizu/login.html';
+                window.location.href = 'login.html';
             } else if (data.code == 1000) {
                 //用户名已存在
                 this.ShowMsg(data.msg);

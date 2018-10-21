@@ -164,11 +164,11 @@ var shop_list = (function () {
                 $(".gotocart").click(function (e) {
 
                     if (getCookie("username") == null) { //未登录
-                        window.location.href = 'http://localhost:1012/meizu/login.html?redirect=http://localhost:1012/meizu/shop_list.html';
+                        window.location.href = 'login.html?redirect=shop_list.html';
                     } else { //已登录
                         if ($(this).is('.buy')) { //立即购买按钮
                             _this.addcar();
-                            window.location.href = 'http://localhost:1012/meizu/shop_car.html';
+                            window.location.href = 'shop_car.html';
                         }
                         if ($(this).is('.car')) { //加入购物车按钮
                             _this.addcar();
@@ -190,7 +190,7 @@ var shop_list = (function () {
             console.log(cid);
             console.log("username=" + username + "&cid=" + cid + "&count=" + count);
             //AJAX 发送POST请求 (url,data,success(data,textStatus,jqXHR),dataType)
-            $.post("http://localhost:1012/meizu/admin/php/addToCart.php",
+            $.post("admin/php/addToCart.php",
                 "username=" + username + "&cid=" + cid + "&count=" + count,
                 function (data, textStatus, jqXHR) {
                     // console.log(data);

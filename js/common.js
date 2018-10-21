@@ -126,7 +126,7 @@
 
   //发送ajax请求获取购物车的商品数量 显示在小红点上面 ele是用户名
   var getCartNum = window.getCartNum = function (ele) {
-    $.post("http://localhost:1012/meizu/admin/php/GetCartCount.php",
+    $.post("admin/php/GetCartCount.php",
       "username=" + ele,
       function (data, textStatus, jqXHR) {
         $(".goodnum").html(parseInt(data) || 0);

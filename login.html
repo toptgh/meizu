@@ -5,7 +5,6 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link href="http://store.res.meizu.com/layout/img/favicon-2e71785f44.ico" rel="shortcut icon" type="image/x-icon">
       <title>Flyme 账号 - 登录</title>
       <link rel="stylesheet" href="css/common/iconfont.css">
       <link rel="stylesheet" href="css/common/reset.css">
@@ -14,7 +13,11 @@
 </head>
 
 <body>
-      <div id="header"></div>
+      <div id="header">
+            <div class="logo-box">
+                  <div class="logo"><a href="index.html"></a></div>
+            </div>
+      </div>
       <!-- 登录表单 -->
       <div class="wrap">
             <div class="wrap-content">
@@ -123,7 +126,7 @@
       <script src="admin/js/login.js"></script>
       <script>
             $(function () {
-                  $('#header').load('commonHTML/log_reg_header.html');
+                 
                   $('#footer').load('commonHTML/log_reg_footer.html');
             });
             login.init('.loginBox');

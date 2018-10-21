@@ -30,7 +30,7 @@ var login = (function () {
                             _this.loginSuccess(data);
                         }
                     }
-                    sendAjax('http://localhost:1012/meizu/admin/php/login.php', params);
+                    sendAjax('admin/php/login.php', params);
                 },
     
 
@@ -54,7 +54,7 @@ var login = (function () {
                                         _this.loginSuccess2(data);
                                     }
                                 }
-                                sendAjax('http://localhost:1012/meizu/admin/php/login.php', params);
+                                sendAjax('admin/php/login.php', params);
                             } else {
                                 _this.ShowMsg('请输入六位验证码');
                             }
@@ -81,7 +81,7 @@ var login = (function () {
                 if ($(".rember input").is(':checked')) {
                     this.setCookie("username",data.data.username,7);
                     if (search == '') {
-                        location.href = 'http://localhost:1012/meizu/index.html';
+                        location.href = 'index.html';
                     } else {
                         url = search.split("=")[1];
                         location.href = url; //跳转为问号后面的网址
@@ -89,7 +89,7 @@ var login = (function () {
                 } else {
 
                     if (search == '') {
-                        location.href = 'http://localhost:1012/meizu/index.html';
+                        location.href = 'index.html';
                     } else {
                         url = search.split("=")[1];
                         location.href = url;
@@ -116,7 +116,7 @@ var login = (function () {
             if (data.code == 200) {
                 document.cookie = "token=" + data.data.token;
                 document.cookie = "user-id=" + data.data.id;
-                location.href = 'http://localhost:1012/meizu/index.html';
+                location.href = 'index.html';
             } else {
                 if (($.trim($("#phonenum").val()) != '') && ($("#smstext").val() != '')) {
                     this.ShowMsg('验证码错误');

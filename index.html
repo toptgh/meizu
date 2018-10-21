@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="http://www.tgh1997.club" />
-    <link href="http://store.res.meizu.com/layout/img/favicon-2e71785f44.ico" rel="shortcut icon" type="image/x-icon">
     <title>魅族官网 - 首页</title>
     <link rel="stylesheet" href="css/common/iconfont.css">
     <link rel="stylesheet" href="css/common/reset.css">
@@ -50,10 +49,10 @@
                     <li><a class="xz" href="">APP下载</a></li>
                 </ul>
             </div>
-            
+
             <div class="nav-box">
                 <ul class="nav-phone">
-                   
+
                 </ul>
             </div>
         </div>
@@ -105,14 +104,34 @@
             <em>￥799</em>
             <img src="images/phone-left.png" alt="">
         </a>
-        <ul class="phone-list"><!-- 内容通过js渲染 --> </ul>
+        <ul class="phone-list">
+            <!-- 内容通过js渲染 -->
+        </ul>
     </div>
 
     <!--  底部 -->
     <div class="foot"></div>
 
     <!-- 回到顶部 -->
-    <div class="slideBar"></div>
+    <div class="slideBar">
+        <ul>
+            <li class="slide_first">
+                <a href="shop_car.html">
+                    <i class="iconfont icon-xiazai1"></i>
+                    <b class="goodnum">0</b>
+                    <span>购物车</span>
+                </a></li>
+            <li class="slide_second">
+                <a href="javascript:void(0)">APP</a>
+                <p><img src="images/mz_shopApp.png" />扫码下载魅族商城APP</p>
+            </li>
+            <li class="slide_last"><a href="javascript:void(0)" title="回到顶部">
+                    <i class="iconfont icon-jiantoushang"></i>
+                    <span>回到顶部</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/swiper.min.js"></script>
@@ -120,7 +139,6 @@
     <script src="js/index.js"></script>
     <script>
         $('.foot').load('commonHTML/index_list_car_footer.html');
-        $('.slideBar').load('commonHTML/index_list_slideBar.html');
         index.init();
     </script>
 </body>
