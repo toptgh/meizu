@@ -1,8 +1,5 @@
 # 仿魅族官网
-
-## 预览地址：<http://www.tgh1997.club/meizu/index.html>
-
-(预览为静态页面，实现全部功能需开启服务器和导入数据库)
+## 静态预览地址：<http://ftp6252671.host705.zhujiwu.me>
 
 ### 实现功能：
 
