@@ -1,5 +1,5 @@
 # 仿魅族官网
-## 预览地址：<http://ftp6252671.host705.zhujiwu.me>
+## 预览地址：<http://ftp6252671.host705.zhujiwu.me/index.html>
 
 ### 实现功能：
 
